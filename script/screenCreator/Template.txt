@@ -1,12 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
+import {observer} from "mobx-react-lite";
 import styles from './FILE_NAME.styles';
 import FILE_NAMEProp from './FILE_NAME.props';
 import FILE_NAMEModel from './FILE_NAME.model';
 import {useScreenStore, useStyles} from 'HOOKS';
 import theme from 'THEME';
 
-function FILE_NAME({navigation, route = {}}: any) {
+const FILE_NAME = observer(({navigation, route = {}}: any) => {
   //路由参数
   const params = route.params as FILE_NAMEProp;
   //本页store
@@ -17,6 +18,6 @@ function FILE_NAME({navigation, route = {}}: any) {
   DIR_NAMEStore.init(params);
 
   return <View style={DIR_NAMEStyle.container} />;
-}
+});
 
 export default FILE_NAME;

@@ -1,9 +1,7 @@
-import {StyleSheet} from 'react-native';
-
 const styles = () => {
-  return StyleSheet.create({
-    container: {}
-  });
+  return {
+    container: {},
+  };
 };
 
 export default styles;

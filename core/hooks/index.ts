@@ -4,10 +4,10 @@ export const useScreenStore = (store: any) => {
   return useRef(store).current;
 };
 
-export const useStyles = (targetStyles: any, deps: any[]) => {
-  const [styles, setStyles] = useState(targetStyles);
+export const useStyles = <T>(targetStyles: () => T, deps: any[]): T => {
+  const [styles, setStyles] = useState(targetStyles());
   useEffect(() => {
-    setStyles(targetStyles);
+    setStyles(targetStyles());
   }, deps);
   return styles;
 };
