@@ -1,0 +1,16 @@
+import {types} from 'mobx-state-tree';
+
+const FILE_NAME = types
+  .model({
+    template: types.optional(types.string, ''),
+  })
+  .views((self) => {
+    return {};
+  })
+  .actions((self) => {
+    return {
+      init(params: any) {},
+    };
+  });
+
+export default FILE_NAME;
